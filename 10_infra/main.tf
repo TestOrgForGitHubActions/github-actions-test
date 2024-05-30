@@ -10,9 +10,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "hirssk-terraform-state"
-    key     = "tasty-log.tfstate"
-    region  = "us-east-1"
+    bucket = "hirssk-terraform-state"
+    key    = "tasty-log.tfstate"
+    region = "us-east-1"
   }
 }
 
@@ -20,5 +20,5 @@ terraform {
 # Provider
 # ---------------------------------------------
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 }
