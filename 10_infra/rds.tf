@@ -50,14 +50,14 @@ resource "aws_db_subnet_group" "mysql_standalone_subnetgroup" {
 # ---------------------------------------------
 resource "aws_db_instance" "mysql_standalone" {
   engine         = "mysql"
-  engine_version = "8.0.28"
+  engine_version = "8.0.32"
 
   identifier = "${var.project}-${var.environment}-mysql-standalone"
 
   username = var.username
   password = var.password
 
-  instance_class = "db.t2.micro"
+  instance_class = "db.t3.micro"
 
   allocated_storage     = 20
   max_allocated_storage = 50
@@ -69,7 +69,7 @@ resource "aws_db_instance" "mysql_standalone" {
   db_subnet_group_name   = aws_db_subnet_group.mysql_standalone_subnetgroup.name
   publicly_accessible    = false
   vpc_security_group_ids = [aws_security_group.db_sg.id]
-  availability_zone      = "ap-northeast-1a"
+  availability_zone      = "us-east-1a"
   port                   = 3306
 
   name                       = "tastylog"
