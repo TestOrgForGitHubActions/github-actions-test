@@ -60,6 +60,16 @@ jobs:
             -no-color \
             -input=false \
             -out=tfplan.tmp
+      - name: terraform apply
+        run: |
+          terraform apply \
+          -var 'project=${{ env.TF_PROJECT }}' \
+          -var 'environment=${{ env.TF_ENV }}' \
+          -var 'username=${{ secrets.USERNAME }}' \
+          -var 'password=${{ secrets.PASSWORD }}' \
+          -no-color \
+          -input=false \
+          -auto-apprve
       - name: Check plan result
         run: |
           grep "No changes. Your infrastructure matches the configuration." tfplan.tmp || exit 2
