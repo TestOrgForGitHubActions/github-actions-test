@@ -3,18 +3,18 @@
 # ---------------------------------------------
 resource "aws_ssm_parameter" "host" {
   name            = "/${var.project}/${var.environment}/app/MYSQL_HOST"
-  allowed_pattern = null
-  description     = null
-  key_id          = null
+  allowed_pattern = ""
+  description     = ""
+  key_id          = ""
   type            = "String"
   value           = aws_db_instance.mysql_standalone.address
 }
 
 resource "aws_ssm_parameter" "port" {
   name            = "/${var.project}/${var.environment}/app/MYSQL_PORT"
-  allowed_pattern = null
-  description     = null
-  key_id          = null
+  allowed_pattern = ""
+  description     = ""
+  key_id          = ""
   type            = "String"
   value           = aws_db_instance.mysql_standalone.port
   # value = "3306"
@@ -22,9 +22,9 @@ resource "aws_ssm_parameter" "port" {
 
 resource "aws_ssm_parameter" "database" {
   name            = "/${var.project}/${var.environment}/app/MYSQL_DATABASE"
-  allowed_pattern = null
-  description     = null
-  key_id          = null
+  allowed_pattern = ""
+  description     = ""
+  key_id          = ""
   type            = "String"
   value           = aws_db_instance.mysql_standalone.name
   # value = "tastylog"
