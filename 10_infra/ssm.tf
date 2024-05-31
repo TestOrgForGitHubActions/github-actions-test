@@ -3,6 +3,9 @@
 # ---------------------------------------------
 resource "aws_ssm_parameter" "host" {
   name  = "/${var.project}/${var.environment}/app/MYSQL_HOST"
+  allowed_pattern = null
+  description = null
+  key_id = null
   type  = "String"
   value = aws_db_instance.mysql_standalone.address
 }
