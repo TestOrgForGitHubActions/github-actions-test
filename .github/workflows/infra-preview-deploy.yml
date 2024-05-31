@@ -56,4 +56,5 @@ jobs:
             -var 'username=${{ secrets.USERNAME }}' \
             -var 'password=${{ secrets.PASSWORD }}' \
             -no-color \
-            -input=false
+            -input=false \
+            -detailed-exitcode
