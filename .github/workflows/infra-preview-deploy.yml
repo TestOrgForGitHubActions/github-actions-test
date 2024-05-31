@@ -48,6 +48,8 @@ jobs:
       - name: Terraform validate
         run: |
           terraform validate -no-color
+      - name: version debug
+        run: terraform -version
       - name: Terraform plan
         run: |
           terraform plan \
