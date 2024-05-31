@@ -57,4 +57,4 @@ jobs:
             -var 'password=${{ secrets.PASSWORD }}' \
             -no-color \
             -input=false \
-            -detailed-exitcod
+            -detailed-exitcode
