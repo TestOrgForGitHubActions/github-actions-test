@@ -60,4 +60,4 @@ jobs:
             -out=tfplan.tmp
       - name: Check plan result
         run: |
-          grep "No changes. Your infrastructure matches the configuration." || exit 2
+          grep "No changes. Your infrastructure matches the configuration." tfplan.tml || exit 2
