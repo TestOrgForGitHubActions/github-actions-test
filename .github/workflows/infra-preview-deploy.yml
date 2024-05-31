@@ -69,7 +69,7 @@ jobs:
           -var 'password=${{ secrets.PASSWORD }}' \
           -no-color \
           -input=false \
-          -auto-apprve
+          -auto-approve
       - name: Check plan result
         run: |
           grep "No changes. Your infrastructure matches the configuration." tfplan.tmp || exit 2
